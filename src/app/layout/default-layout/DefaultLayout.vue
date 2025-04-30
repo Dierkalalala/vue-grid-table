@@ -1,18 +1,30 @@
 <script setup lang="ts">
-  import { NConfigProvider } from 'naive-ui'
+import {NConfigProvider, NFlex} from 'naive-ui'
+import PageContainer from "@/shared/components/page-container";
 </script>
 
 <template>
   <n-config-provider>
-    <header class="header">
 
+    <header class="header">
+      <PageContainer>
+        <n-flex justify="center" gap="50">
+          <RouterLink
+              to="/frontend"
+          >
+            Frontend approach
+          </RouterLink>
+
+          <RouterLink
+              to="/backend"
+          >
+            Backend approach
+          </RouterLink>
+        </n-flex>
+      </PageContainer>
     </header>
 
     <slot></slot>
-
-    <footer class="footer">
-
-    </footer>
   </n-config-provider>
 
 </template>
@@ -20,9 +32,5 @@
 <style scoped>
 .header {
   margin-bottom: 50px;
-}
-
-.footer {
-  margin-top: 50px;
 }
 </style>

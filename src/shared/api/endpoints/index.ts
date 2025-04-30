@@ -1,0 +1,1 @@
+export { default as ProductEndpoints } from './product'

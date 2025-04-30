@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import useProductTable from "@/entities/product-table/useProductTable.ts";
+  import useProductTable from "./useProductTable";
   import { NDataTable, NInput } from 'naive-ui'
 
   const {

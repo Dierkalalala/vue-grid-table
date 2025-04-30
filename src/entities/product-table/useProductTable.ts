@@ -1,6 +1,6 @@
 import {computed, onMounted, ref} from "vue";
 import type { DataTableColumns } from 'naive-ui'
-import type { MockProduct } from "@/shared/api/types/product.ts";
+import type { MockProduct } from "@/shared/types/product";
 import getProduct from "@/shared/api/mock/product";
 
 export default function useProductTable() {
@@ -34,15 +34,15 @@ export default function useProductTable() {
             filterOptions: [
                 {
                     label: 'New',
-                    value: true
+                    value: 1
                 },
                 {
                     label: 'Used',
-                    value: false
+                    value: 0
                 }
             ],
             filter(value, row) {
-                return row.isNew === value;
+                return row.isNew === Boolean(value);
             },
             render: (product: MockProduct) =>
                 product.isNew ? 'New' : 'Used'

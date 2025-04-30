@@ -67,7 +67,7 @@ export default function useAsyncProductList() {
     const pagination = ref({
         page: 1,
         pageSize: 10,
-        pageCount: 13,
+        pageCount: 1,
         onChange: (page: number) => {
             pagination.value.page = page
 
